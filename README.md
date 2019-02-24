@@ -1,6 +1,6 @@
 # Planes - a simple browser based multiplayer game
 
-Planes is a simple multiplayer game, that runs in browser and back-end runs on node.js
+Planes is a simple multiplayer game, that runs in browser with back-end written in node.js
 
 # Getting Started
 
