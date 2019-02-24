@@ -6,6 +6,8 @@ var bodyParser = require("body-parser");
 var mysql = require("mysql");
 
 
+//connect to mysql
+
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -31,7 +33,7 @@ con.connect(function(err) {
   setInterval(addObjects, 20000);
 
 
-
+//airplanes data
 
   airplanes = {
     "comm": {
@@ -49,6 +51,8 @@ con.connect(function(err) {
   };
 
 
+//set up web server
+
   app.use(express.static('public'));
 
   app.get('/', function(req, res) {
@@ -60,6 +64,8 @@ con.connect(function(err) {
     res.sendFile(__dirname + '/public/login.html');
 
   });
+
+  //sign up
 
   app.post("/signup", function(req, res) {
 
@@ -105,7 +111,7 @@ con.connect(function(err) {
 
   });
 
-
+  //log in
 
   app.post("/loginup", function(req, res) {
 
@@ -135,10 +141,12 @@ con.connect(function(err) {
   });
 
 
+  //start the server
 
   server.listen(8080);
   console.log("listening at port 8080");
 
+  //wait for socket connection
 
   io.on('connection', function(socket) {
 
@@ -148,11 +156,14 @@ con.connect(function(err) {
 
     var cash = 0;
 
+    //initial message
+
     socket.emit("giveId", {
       "id": userId,
       "data": players
     });
 
+    //add player
 
     players.push({
       "id": userId,
@@ -165,6 +176,7 @@ con.connect(function(err) {
       "socketId": socket.id,
     });
 
+    //send data
 
     socket.emit("data", [players, objects]);
 
@@ -214,7 +226,7 @@ con.connect(function(err) {
       });
 
 
-
+      //calculate for each player
 
       setInterval(calculate, 20);
 
@@ -228,6 +240,8 @@ con.connect(function(err) {
     }
 
 
+    //this function runs every 50ms
+    //it recalculates player's position and if it is touching any objects
 
     function calculate() {
 
@@ -344,6 +358,8 @@ con.connect(function(err) {
 
   });
 
+
+  //add "baloons". If player touches them he gets 1$
 
   function addObjects() {
 
