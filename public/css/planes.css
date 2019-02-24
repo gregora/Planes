@@ -1,0 +1,168 @@
+#canvas{
+
+  background-color: #42adf4;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+}
+
+#slider {
+
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    height: 30%;
+    width: auto;
+
+}
+
+input[type=range][orient=vertical] {
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+
+    display: block;
+    position: fixed;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 150%;
+    font-family: Calibri, sans-serif;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+-moz-user-select: none;     /* Firefox all */
+-ms-user-select: none;      /* IE 10+ */
+
+-o-user-select: none;
+user-select: none;
+
+transition: 0.2s;
+}
+
+#instr{
+
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom:  0;
+  display: none;
+
+
+}
+
+.button{
+
+  background-color:white;
+  padding: 3px;
+  border-radius: 3px;
+  margin:  7px;
+
+}
+
+.button:hover{
+
+  cursor: pointer;
+
+}
+
+.stBtn{
+
+  position: fixed;
+  width: calc(50% - 80px);
+  left: 25%;
+  background-color: #42adf4;
+  padding: 40px;
+  text-align: center;
+  top: 20%;
+  border-radius: 5px;
+
+}
+
+.stBtn:hover{
+
+  cursor: pointer;
+
+}
+
+#fighter{
+
+  top: calc(20% + 120px);
+
+}
+
+#screen{
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: white;
+
+}
+
+
+#link{
+
+  color: white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #42adf4;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+
+}
+
+#cash{
+
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  margin: 5px;
+  z-index: 3;
+
+}
+
+#menu{
+
+  position: fixed;
+  z-index: 3;
+  left: 10px;
+  top: 45px;
+  display: none;
+
+}
+
+
+@media (max-width: 1000px){
+
+  #instr{
+
+    display: block;
+
+  }
+
+  .stBtn{
+
+    width: calc(100% - 80px);
+    left: 0%;
+  }
+
+
+}

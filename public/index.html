@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/planes.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Planes</title>
+
+</head>
+
+<body>
+
+  <div id="cash"></div>
+  <div class="button" id="menu" onclick="menu()">Menu</div>
+
+
+  <div id="screen" class="hide">
+
+    <a href="/login" id="link" class="hide">Log in</a>
+
+    <div class="stBtn hide" id="fighter" onclick="start('fighter')">Fighter jet</div>
+    <div class="stBtn hide" onclick="start('comm')">Commercial airplane</div>
+
+
+  </div>
+
+<canvas id="canvas">
+
+
+</canvas>
+
+<input id="slider" value="0" type="range" min="0" max="100" orient="vertical" type="range" oninput="speed()"/>
+
+
+<div id="instr">
+
+
+  <span class="button material-icons" onclick="socket.emit('key', '-2');">rotate_left</span>
+  <span class="button material-icons" onclick="socket.emit('key', '+2');">rotate_right</span>
+
+  <div class="button material-icons" onclick="if(unCoef<17.9){unCoef=unCoef*1.5;}">zoom_in</div>
+  <div class="button material-icons" onclick="if(unCoef>0.012){unCoef=unCoef/1.5;}">zoom_out</div>
+</div>
+
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/engine.js"></script>
+
+</html>

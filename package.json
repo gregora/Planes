@@ -1,0 +1,22 @@
+{
+  "name": "multiplayer",
+  "version": "1.0.0",
+  "description": "/",
+  "main": "server.js",
+  "scripts": {
+    "test": "/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/"
+  },
+  "keywords": [
+    "/"
+  ],
+  "author": "GregorA.",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
+  }
+}

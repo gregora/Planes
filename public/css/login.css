@@ -1,0 +1,28 @@
+button{
+
+  border: none;
+
+    color: white;
+    background-color: #42adf4;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    display: block;
+
+}
+
+button:hover{
+
+  cursor: pointer;
+
+}
+
+
+input{
+
+  display: block;
+  padding: 5px;
+  margin: 5px;
+
+}
